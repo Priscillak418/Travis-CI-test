@@ -3,3 +3,15 @@ language: node_js
 node_js:
   - 14.17.0
 
+git:
+  depth: 3
+
+git:
+  depth: false
+
+before_install:
+- echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
+- git lfs pull
+
+services:
+  - docker
